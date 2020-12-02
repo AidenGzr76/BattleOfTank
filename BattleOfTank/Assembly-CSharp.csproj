@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{371CE8C3-D8D1-E9CF-61EC-5D9E9D47A297}</ProjectGuid>
+    <ProjectGuid>{53FA0B9A-E770-3E6F-D776-F6D7F7625D6C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -344,10 +344,10 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Assets/AI/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Assets/AI/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Assets/Plugin/LitJson.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Assets/Plugin/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -704,98 +704,98 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Path.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="PsdPlugin">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{E96ABA6B-3365-96E9-8941-6BD4A3FCDC32}</Project>
+      <Project>{EC1DB259-5290-8783-C57E-21CCF428E96E}</Project>
       <Name>AstarPathfindingProject</Name>
     </ProjectReference>
     <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{ABA01CD1-EF0A-4B15-E135-BA3E53A74C78}</Project>
+      <Project>{F2B3AEB6-4703-4540-B462-C39242CA66CB}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{EA29577A-642E-758E-6C40-B84C7C195DDB}</Project>
+      <Project>{38C88D8F-8917-D403-BA52-A2B93EBE3134}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>

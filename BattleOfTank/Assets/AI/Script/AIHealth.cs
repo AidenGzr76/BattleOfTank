@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AIHealth : MonoBehaviour
 {
-	public const int maxHealth = 100;
+	public const float maxHealth = 100;
 	public bool destroyOnDeath;
 
-	public int currentHealth = maxHealth;
+	public float currentHealth = maxHealth;
 	public bool isEnemy = false;
 
 	private bool isLocalPlayer;
 
 	public static bool isEscape;
+
+	public Slider healthBar;
 
 	public void TakeDamage(GameObject playerFrom, int amount)
 	{
@@ -23,6 +26,8 @@ public class AIHealth : MonoBehaviour
 
 	public void OnChangeHealth()
 	{
+		healthBar.value = currentHealth / maxHealth;
+
 		if (currentHealth <= 0)
 		{
 			if (destroyOnDeath)
@@ -32,6 +37,7 @@ public class AIHealth : MonoBehaviour
 			else
 			{
 				currentHealth = maxHealth;
+				healthBar.value = currentHealth / maxHealth;
 			}
 		}
 		if (isEnemy)

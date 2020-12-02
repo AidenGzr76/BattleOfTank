@@ -146,6 +146,7 @@ public class Network : MonoBehaviour
 		//playerName.text = currentUserJSON.name;
 		pc.isLocalPlayer = true;
 		p.name = currentUserJSON.name;
+		p.transform.Find("HealthCanvas").Find("NameText").GetComponent<Text>().text = currentUserJSON.name;
 		maincamera.SetActive(false);
 	}
 	void OnPlayerMove(SocketIOEvent socketIOEvent)

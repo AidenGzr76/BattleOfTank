@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-	public const int maxHealth = 100;
+	public const float maxHealth = 100;
 	public bool destroyOnDeath;
 
-	public int currentHealth = maxHealth;
+	public float currentHealth = maxHealth;
 	public bool isEnemy = false;
 
 	private bool isLocalPlayer;
+	
+	public Slider healthBar;
 
 	// Use this for initialization
 	void Start()
@@ -30,6 +33,8 @@ public class Health : MonoBehaviour
 
 	public void OnChangeHealth()
 	{
+		healthBar.value = currentHealth / maxHealth;
+
 		if (currentHealth <= 0)
 		{
 			if (destroyOnDeath)
@@ -39,6 +44,7 @@ public class Health : MonoBehaviour
 			else
 			{
 				currentHealth = maxHealth;
+				healthBar.value = currentHealth / maxHealth;
 				Respawn();
 			}
 		}

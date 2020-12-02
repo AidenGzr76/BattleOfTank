@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E96ABA6B-3365-96E9-8941-6BD4A3FCDC32}</ProjectGuid>
+    <ProjectGuid>{EC1DB259-5290-8783-C57E-21CCF428E96E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>AstarPathfindingProject</AssemblyName>
@@ -379,10 +379,10 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Assets/AI/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Assets/AI/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Assets/Plugin/LitJson.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Assets/Plugin/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -730,10 +730,10 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/Unity/Projects/BattleOfTank2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>E:/Unity/Projects/BattleOfTankGit/BattleOfTank/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
