@@ -38,6 +38,8 @@ public class TankMovement : MonoBehaviour
     Quaternion oldBarrelRotation;
     Quaternion currentBarrelRotation;
 
+    public GameObject Fire;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -133,6 +135,9 @@ public class TankMovement : MonoBehaviour
     {
         GameObject bullet = Instantiate(Bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
 
+        Fire.gameObject.SetActive(true);
+        Invoke("waitFire", 0.1f);
+
         Bullet b = bullet.GetComponent<Bullet>();
         b.playerFrom = this.gameObject;
 
@@ -142,5 +147,10 @@ public class TankMovement : MonoBehaviour
 
         Destroy(bullet, 2f);
 
+    }
+
+    void waitFire()
+    {
+        Fire.gameObject.SetActive(false);
     }
 }

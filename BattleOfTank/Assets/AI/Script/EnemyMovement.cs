@@ -18,6 +18,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private Transform bulletSpawn;
 
+    public GameObject Fire;
+
     public GameObject Bullet;
 
     public int bulletSpeed;
@@ -59,6 +61,9 @@ public class EnemyMovement : MonoBehaviour
     {
         GameObject bullet = Instantiate(Bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
 
+        Fire.gameObject.SetActive(true);
+        Invoke("waitFire", 0.1f);
+
         //Bullet b = bullet.GetComponent<Bullet>();
         //b.playerFrom = this.gameObject;
 
@@ -67,5 +72,10 @@ public class EnemyMovement : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
 
         Destroy(bullet, 2f);
+    }
+
+    void waitFire()
+    {
+        Fire.gameObject.SetActive(false);
     }
 }

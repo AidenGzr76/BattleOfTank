@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
 	
 	public Slider healthBar;
 
+	public Animator Explosion;
+
 	// Use this for initialization
 	void Start()
 	{		
@@ -39,15 +41,28 @@ public class Health : MonoBehaviour
 		{
 			if (destroyOnDeath)
 			{
-				Destroy(gameObject);
+				Explosion.SetBool("isExplore", true);
+
+				Destroy(gameObject, Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
+				//Destroy(gameObject);
+				//Respawn();
+				//StartCoroutine("temp");
 			}
 			else
 			{
 				currentHealth = maxHealth;
 				healthBar.value = currentHealth / maxHealth;
-				Respawn();
+				//Respawn();
 			}
 		}
+	}
+
+	IEnumerator temp()
+	{
+		yield return new WaitForSeconds(Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+		Explosion.SetBool("isExplore", false);
+		//healthBar.value = currentHealth / maxHealth;
+		Respawn();
 	}
 
 	void Respawn()

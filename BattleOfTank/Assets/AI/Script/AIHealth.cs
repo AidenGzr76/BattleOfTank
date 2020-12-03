@@ -17,6 +17,8 @@ public class AIHealth : MonoBehaviour
 
 	public Slider healthBar;
 
+	public Animator Explosion;
+
 	public void TakeDamage(GameObject playerFrom, int amount)
 	{
 		currentHealth -= amount;
@@ -32,7 +34,11 @@ public class AIHealth : MonoBehaviour
 		{
 			if (destroyOnDeath)
 			{
-				Destroy(gameObject);
+				//Explosion.gameObject.transform.position = gameObject.transform.position;
+				Explosion.SetBool("isExplore", true);
+
+				Destroy(gameObject, Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
+				//Destroy(gameObject);
 			}
 			else
 			{

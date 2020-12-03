@@ -30,6 +30,8 @@ public class AI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    public GameObject Fire;
+
     public GameObject Bullet;
 
     public int bulletSpeed;
@@ -181,6 +183,9 @@ public class AI : MonoBehaviour
         {
             GameObject bullet = Instantiate(Bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
 
+            Fire.gameObject.SetActive(true);
+            Invoke("waitFire", 0.1f);
+
             //Bullet b = bullet.GetComponent<Bullet>();
             //b.playerFrom = this.gameObject;
 
@@ -191,6 +196,11 @@ public class AI : MonoBehaviour
             Destroy(bullet, 2f);
         }
 
+    }
+
+    void waitFire()
+    {
+        Fire.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

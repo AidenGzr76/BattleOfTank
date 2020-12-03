@@ -126,6 +126,7 @@ public class Network : MonoBehaviour
 		//playerName.text = userJSON.name;
 		pc.isLocalPlayer = false;
 		p.name = userJSON.name;
+		p.transform.Find("HealthCanvas").Find("NameText").GetComponent<Text>().text = userJSON.name;
 		// we also need to set the health
 		Health h = p.GetComponent<Health>();
 		h.currentHealth = userJSON.health;
@@ -164,7 +165,7 @@ public class Network : MonoBehaviour
 
 		if (p != null)
 		{
-			Debug.Log(position);
+			//Debug.Log(position);
 			p.transform.position = position;
 		}
 	}
