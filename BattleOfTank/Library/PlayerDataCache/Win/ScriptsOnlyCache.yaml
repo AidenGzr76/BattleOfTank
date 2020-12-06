@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Bullet
+    - DestroyController
     - EnemyBullet
     - EnemySpawner
     - Health
@@ -108,6 +109,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14694}
     - Class: 114
       Script: {instanceID: 14754}
+    - Class: 114
+      Script: {instanceID: 35820}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -901,6 +904,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: d0adc65b6f54d204e5a5dc174eb9a803
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DestroyController
   platform: 5
   scenePathNames:
   - Assets/Scenes/NetworkTank.unity

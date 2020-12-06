@@ -17,6 +17,9 @@ public class Health : MonoBehaviour
 
 	public Animator Explosion;
 
+	public static bool destroyControl = false;
+	public static bool respawnControl = false;
+
 	// Use this for initialization
 	void Start()
 	{		
@@ -43,36 +46,62 @@ public class Health : MonoBehaviour
 			{
 				Explosion.SetBool("isExplore", true);
 
-				Destroy(gameObject, Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
-				//Destroy(gameObject);
+				//Invoke("Respawn", Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
+
+				if (isEnemy)
+				{
+					Destroy(gameObject, Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
+				}
+
+				Invoke("stop", Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f) ;
+
+				//Destroy(gameObject, Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
+				//currentHealth = maxHealth;
+				//healthBar.value = currentHealth / maxHealth;
 				//Respawn();
-				//StartCoroutine("temp");
+				if (isLocalPlayer)
+				{
+					destroyControl = true;
+				}
 			}
-			else
-			{
-				currentHealth = maxHealth;
-				healthBar.value = currentHealth / maxHealth;
-				//Respawn();
-			}
+			//else
+			//{
+			//	Debug.Log("Ddsdsd");
+			//	currentHealth = maxHealth;
+			//	healthBar.value = currentHealth / maxHealth;
+			//	Respawn();
+			//}
 		}
 	}
 
-	IEnumerator temp()
+	private void stop()
 	{
-		yield return new WaitForSeconds(Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
 		Explosion.SetBool("isExplore", false);
-		//healthBar.value = currentHealth / maxHealth;
+		//Explosion.gameObject.SetActive(false);
 		Respawn();
+	}
+
+	public void menuBtn()
+	{
+		//Respawn();
+		respawnControl = true;
+		Debug.Log("eeee");
 	}
 
 	void Respawn()
 	{
 		if (isLocalPlayer)
 		{
+			currentHealth = maxHealth;
+			healthBar.value = currentHealth / maxHealth;
+			//respawnControl = true;
+			//Debug.Log(":))))");
 			Vector2 spawnPoint = Vector2.zero;
-			Quaternion spawnRotation = Quaternion.Euler(0, 180, 0);
+			//Quaternion spawnRotation = Quaternion.Euler(0, 180, 0);
 			transform.position = spawnPoint;
-			transform.rotation = spawnRotation;
+			//transform.rotation = spawnRotation;
+			//Explosion.gameObject.SetActive(true);
+			Explosion.SetBool("isExplore", false);
 		}
 	}
 }
