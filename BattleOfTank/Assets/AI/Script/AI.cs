@@ -206,17 +206,28 @@ public class AI : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log(collision.gameObject.name);
+        
+        //if (collision.gameObject.tag == "Block")
+        //{
+        //    isHitBlock = true;
+        //}
 
-        if (collision.gameObject.tag == "Block")
+        if (collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Block")
         {
             isHitBlock = true;
         }
+
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Debug.Log(collision.gameObject.name);
 
-        if (collision.gameObject.tag == "Block")
+        //if (collision.gameObject.tag == "Block")
+        //{
+        //    isHitBlock = false;
+        //}
+
+        if (collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Block")
         {
             isHitBlock = false;
         }
