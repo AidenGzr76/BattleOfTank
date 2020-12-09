@@ -71,10 +71,12 @@
     <Compile Include="Assets\AI\Script\Player.cs" />
     <Compile Include="Assets\AI\Script\PlayerBullet.cs" />
     <Compile Include="Assets\AI\Script\PlayerFind.cs" />
+    <Compile Include="Assets\AI\Script\SingleGameController.cs" />
     <Compile Include="Assets\Script\Bullet.cs" />
     <Compile Include="Assets\Script\DestroyController.cs" />
     <Compile Include="Assets\Script\EnemySpawner.cs" />
     <Compile Include="Assets\Script\Health.cs" />
+    <Compile Include="Assets\Script\MultiGameController.cs" />
     <Compile Include="Assets\Script\Network.cs" />
     <Compile Include="Assets\Script\PlayerSpawner.cs" />
     <Compile Include="Assets\Script\SpawnPoint.cs" />

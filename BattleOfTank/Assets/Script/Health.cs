@@ -31,7 +31,6 @@ public class Health : MonoBehaviour
 	{
 		currentHealth -= amount;
 
-		//OnChangeHealth();
 		Network n = Network.instance.GetComponent<Network>();
 		n.CommandHealthChange(playerFrom, this.gameObject, amount, isEnemy);
 	}
@@ -46,8 +45,6 @@ public class Health : MonoBehaviour
 			{
 				Explosion.SetBool("isExplore", true);
 
-				//Invoke("Respawn", Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
-
 				if (isEnemy)
 				{
 					Destroy(gameObject, Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
@@ -55,37 +52,23 @@ public class Health : MonoBehaviour
 
 				Invoke("stop", Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f) ;
 
-				//Destroy(gameObject, Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
-				//currentHealth = maxHealth;
-				//healthBar.value = currentHealth / maxHealth;
-				//Respawn();
 				if (isLocalPlayer)
 				{
 					destroyControl = true;
 				}
 			}
-			//else
-			//{
-			//	Debug.Log("Ddsdsd");
-			//	currentHealth = maxHealth;
-			//	healthBar.value = currentHealth / maxHealth;
-			//	Respawn();
-			//}
 		}
 	}
 
 	private void stop()
 	{
 		Explosion.SetBool("isExplore", false);
-		//Explosion.gameObject.SetActive(false);
 		Respawn();
 	}
 
 	public void menuBtn()
 	{
-		//Respawn();
 		respawnControl = true;
-		Debug.Log("eeee");
 	}
 
 	void Respawn()
@@ -94,13 +77,8 @@ public class Health : MonoBehaviour
 		{
 			currentHealth = maxHealth;
 			healthBar.value = currentHealth / maxHealth;
-			//respawnControl = true;
-			//Debug.Log(":))))");
 			Vector2 spawnPoint = Vector2.zero;
-			//Quaternion spawnRotation = Quaternion.Euler(0, 180, 0);
 			transform.position = spawnPoint;
-			//transform.rotation = spawnRotation;
-			//Explosion.gameObject.SetActive(true);
 			Explosion.SetBool("isExplore", false);
 		}
 	}
