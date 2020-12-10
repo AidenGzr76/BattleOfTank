@@ -5,8 +5,6 @@ using System.Collections;
 
 public class AI : MonoBehaviour
 {
-    public Team Team => _team;
-    [SerializeField] private Team _team;
     [SerializeField] private LayerMask _layerMask;
 
     private float _attackRange = 10.3f;
@@ -17,7 +15,7 @@ public class AI : MonoBehaviour
     private DroneState _currentState;
 
     //EnemyAI
-    public Transform nextPos;
+    private Transform nextPos;
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
 
@@ -51,6 +49,14 @@ public class AI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
+        Target = GameObject.Find("AIPlayerTank").GetComponent<Player>();
+
+        //string[] split = gameObject.name.Split('-');
+
+        //int num = int.Parse(split[1]);
+
+        //nextPos = GameObject.Find("nextPos" + "-" + num).transform;
+
         tempSpeed = transform.GetComponent<AIPath>().maxSpeed;
 
         InvokeRepeating("CmdFire", 0f, 1f);
@@ -59,10 +65,17 @@ public class AI : MonoBehaviour
 
     void NextRandomPos()
     {
-        if (allowFindRandomPos)
+        if (allowFindRandomPos || AIDestinationSetter.posDone)
         {
             allowFindRandomPos = false;
-            nextPos.position = new Vector3(Random.Range(-9, 9), Random.Range(-5, 5), 0);
+
+            string[] split = gameObject.name.Split('-');
+
+            int num = int.Parse(split[1]);
+
+            nextPos = GameObject.Find("nextPos" + "-" + num).transform;
+
+            nextPos.position = new Vector3(Random.Range(-24, 24), Random.Range(-18, 10), 0);
         }
     }
 
@@ -91,25 +104,6 @@ public class AI : MonoBehaviour
 
                     break;
                 }
-            //case DroneState.Chase:
-            //    {
-            //        if (Target == null)
-            //        {
-            //            _currentState = DroneState.Saerch;
-            //            return;
-            //        }
-
-            //        AIDestinationSetter.wantSearch = false;
-
-            //        if (Vector3.Distance(transform.position, Target.transform.position) < _attackRange)
-            //        {
-            //            _currentState = DroneState.Attack;
-            //        }
-
-            //        checkEscape();
-
-            //        break;
-            //    }
             case DroneState.Attack:
                 {
                     if (Target != null)
@@ -233,12 +227,6 @@ public class AI : MonoBehaviour
         }
     }
 
-}
-
-public enum Team
-{
-    Red,
-    Blue
 }
 
 public enum DroneState

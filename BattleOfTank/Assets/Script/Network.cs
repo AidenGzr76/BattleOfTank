@@ -60,7 +60,7 @@ public class Network : MonoBehaviour
 		PlayerJSON playerJSON = new PlayerJSON(playerName, playerSpawnPoints, enemySpawnPoints);
 		string data = JsonUtility.ToJson(playerJSON);
 		socket.Emit("play", new JSONObject(data));
-		canvas.transform.Find("Panel").gameObject.SetActive(false);
+		canvas.transform.Find("Panel").Find("MultiplayerMenu").gameObject.SetActive(false);
 	}
 
 	public void CommandMove(Vector3 vec3)

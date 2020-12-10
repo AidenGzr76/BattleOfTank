@@ -12,11 +12,27 @@ public class MultiGameController : MonoBehaviour
 
     public static string PlayerName;
 
+    public static bool retry = false;
+
+    public Text score;
+
     private void Start()
     {
         multiEndMenu.SetActive(false);
         multiStartMenu.SetActive(false);
         startMenu.SetActive(true);
+    }
+
+    public void FixedUpdate()
+    {
+        if (Health.destroyControl)
+        {
+            multiEndMenu.SetActive(true);
+            score.text = Health.score.ToString();
+            Debug.Log("DD");
+            // Stop Game
+            Health.destroyControl = false;
+        }
     }
 
     public void SingleplayerBtn()
@@ -44,6 +60,9 @@ public class MultiGameController : MonoBehaviour
 
     public void Retry()
     {
-
+        multiEndMenu.SetActive(false);
+        retry = true;
+        Health.score = 0;
+        // Run game again
     }
 }

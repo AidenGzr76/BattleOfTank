@@ -159,7 +159,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -996939445
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &4844570113555363518
@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8734621932569271554
 RectTransform:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 3699097170571899612}
   - component: {fileID: 1476972498801151245}
   m_Layer: 0
-  m_Name: shotOrange
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -578,6 +578,7 @@ MonoBehaviour:
   rotation: 60
   barrelPivot: {fileID: 3792047823707158485}
   bulletSpawn: {fileID: 3792047823619633002}
+  Fire: {fileID: 978996802377707587}
   Bullet: {fileID: 2938405062111276391, guid: eef391b56c278c9469ccdd2147bb6000, type: 3}
   bulletSpeed: 15
 --- !u!114 &7753042596869347320

@@ -20,6 +20,8 @@ public class Health : MonoBehaviour
 	public static bool destroyControl = false;
 	public static bool respawnControl = false;
 
+	public static int score = 0;
+
 	// Use this for initialization
 	void Start()
 	{		
@@ -54,8 +56,12 @@ public class Health : MonoBehaviour
 
 				if (isLocalPlayer)
 				{
-					destroyControl = true;
-				}
+                    destroyControl = true;
+                }
+                else
+                {
+					score++;
+                }
 			}
 		}
 	}

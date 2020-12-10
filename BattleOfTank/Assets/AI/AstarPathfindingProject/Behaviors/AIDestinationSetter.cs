@@ -18,6 +18,7 @@ namespace Pathfinding {
 		public Transform target;
 		IAstarAI ai;
 		public static bool wantSearch = false;
+		public static bool posDone = false;
 
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
@@ -32,14 +33,34 @@ namespace Pathfinding {
 			if (ai != null) ai.onSearchPath -= Update;
 		}
 
-		private void Start()
-		{
-			target.position = new Vector3(Random.Range(-9, 9), Random.Range(-5, 5), 0);
-		}
+		//private void Start()
+		//{
+  //          string[] split = gameObject.name.Split('-');
+
+  //          int num = int.Parse(split[1]);
+
+  //          target = GameObject.Find("target" + "-" + num).transform;
+
+  //          target.position = new Vector3(Random.Range(-24, 24), Random.Range(-18, 10), 0);
+		//}
 
 		/// <summary>Updates the AI's destination every frame</summary>
-		void Update () {
-			if (target != null && ai != null && wantSearch)
+		void Update () 
+		{
+            if (posDone)
+            {
+				posDone = false;
+
+				string[] split = gameObject.name.Split('-');
+
+                int num = int.Parse(split[1]);
+
+                target = GameObject.Find("nextPos" + "-" + num.ToString()).transform;
+
+                target.position = new Vector3(Random.Range(-24, 24), Random.Range(-18, 10), 0);
+            }
+
+            if (target != null && ai != null && wantSearch)
 			{
 				ai.destination = target.position;
 
