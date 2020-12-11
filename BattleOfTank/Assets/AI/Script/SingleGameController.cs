@@ -21,14 +21,37 @@ public class SingleGameController : MonoBehaviour
     public GameObject nextpos;
 
     public Text enemyNumText;
+    public Text playerScore;
 
-    public static bool posDone = false;
+    public static int globalEnemyNumber = 5;
+
+    public GameObject MainCamera;
+
+    public Text Kills;
 
     private void Start()
     {
         singleEndMenu.SetActive(false);
         enemyNumberMenu.SetActive(true);
         singleStartMenu.SetActive(false);
+        Time.timeScale = 0;
+    }
+
+    public void FixedUpdate()
+    {
+        Kills.text = AIHealth.score + "/" + globalEnemyNumber;
+
+        if (AIHealth.destroyPlayer || (AIHealth.score == globalEnemyNumber))
+        {
+            MainCamera.SetActive(true);
+
+            singleEndMenu.SetActive(true);
+            playerScore.text = AIHealth.score.ToString();
+            AIHealth.score = 0;
+            Time.timeScale = 0;
+
+            AIHealth.destroyPlayer = false;
+        }
     }
 
     public void Confirm()
@@ -71,20 +94,23 @@ public class SingleGameController : MonoBehaviour
 
             npos.name = "nextPos" + "-" + enemynumber.ToString();
 
-            AIDestinationSetter.posDone = true;
+            enemy.GetComponent<AIDestinationSetter>().target = npos.transform;
         }
 
-        //AIDestinationSetter.posDone = true;
+        globalEnemyNumber = eNumber;
         singleStartMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void Retry()
     {
-        //retry
+        PlayerFind.playerFinded = false;
+        PlayerBullet.playerShot = false;
+        AIHealth.isEscape = false;
+        //AIHealth.score = 0;
+        AIDestinationSetter.wantSearch = false;
 
-        singleEndMenu.SetActive(false);
-        enemyNumberMenu.SetActive(false);
-        singleStartMenu.SetActive(false);
+        SceneManager.LoadScene("single");
     }
 
     public void LocalBack()

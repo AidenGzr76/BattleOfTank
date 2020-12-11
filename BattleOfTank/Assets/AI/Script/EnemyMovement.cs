@@ -27,6 +27,8 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Quaternion camRot = Quaternion.Euler(0, 0, -transform.rotation.z);
+        transform.Find("Main Camera").rotation = camRot;
 
         checkMovement();
         checkAiming();
@@ -62,7 +64,7 @@ public class EnemyMovement : MonoBehaviour
         GameObject bullet = Instantiate(Bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
 
         Fire.gameObject.SetActive(true);
-        Invoke("waitFire", 0.1f);
+        Invoke("waitFire", 0.05f);
 
         //Bullet b = bullet.GetComponent<Bullet>();
         //b.playerFrom = this.gameObject;

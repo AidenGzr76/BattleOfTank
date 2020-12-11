@@ -19,6 +19,14 @@ public class AIHealth : MonoBehaviour
 
 	public Animator Explosion;
 
+	public static int score = 0;
+
+	public static bool destroyPlayer = false;
+
+	public static string healthEnemyName;
+
+	string tempName = null;
+
 	public void TakeDamage(GameObject playerFrom, int amount)
 	{
 		currentHealth -= amount;
@@ -45,11 +53,25 @@ public class AIHealth : MonoBehaviour
 				currentHealth = maxHealth;
 				healthBar.value = currentHealth / maxHealth;
 			}
+
+            if (isEnemy)
+            {
+                if (tempName != transform.name)
+                {
+					score++;
+					tempName = transform.name;
+				}
+            }
+            else
+            {
+				destroyPlayer = true;
+			}
 		}
 		if (isEnemy)
 		{
 			if (currentHealth <= 40)
 			{
+				healthEnemyName = transform.name;
 				isEscape = true;
 			}
 		}

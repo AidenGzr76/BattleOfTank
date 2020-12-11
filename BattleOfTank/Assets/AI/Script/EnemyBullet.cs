@@ -7,9 +7,9 @@ public class EnemyBullet : MonoBehaviour
 	[HideInInspector]
 	public GameObject playerFrom;
 
-	void OnTriggerEnter2D(Collider2D collision)
+	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.tag == "Player")
+		if (collision.gameObject.tag == "Player")
 		{
 			var hit = collision.gameObject;
 			var health = hit.GetComponent<AIHealth>();

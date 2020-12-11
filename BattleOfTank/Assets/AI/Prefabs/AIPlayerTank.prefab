@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 1902582183}
   - component: {fileID: 7753042596869347320}
   - component: {fileID: 1108543320}
+  - component: {fileID: -6556161439754188717}
   m_Layer: 0
   m_Name: AIPlayerTank
   m_TagString: Player
@@ -556,7 +557,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0, y: -0.03}
@@ -610,6 +611,27 @@ MonoBehaviour:
   isEnemy: 0
   healthBar: {fileID: 5801395688723913179}
   Explosion: {fileID: 142154217}
+--- !u!50 &-6556161439754188717
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3792047824388183275}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3792047825279459448
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6326271618999957898
 Transform:
   m_ObjectHideFlags: 0

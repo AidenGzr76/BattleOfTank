@@ -19,7 +19,7 @@ public class AI : MonoBehaviour
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
 
-    public Transform enemyGFX;
+    private Transform enemyGFX;
 
     Path path;
     int currentWayPoint = 0;
@@ -44,6 +44,8 @@ public class AI : MonoBehaviour
     bool allowFire = false;
     bool allowFindRandomPos = false;
 
+    //private int thisEnemyNumber;
+
     private void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -51,11 +53,13 @@ public class AI : MonoBehaviour
 
         Target = GameObject.Find("AIPlayerTank").GetComponent<Player>();
 
+        enemyGFX = transform.Find("EnemyGFX");
+
         //string[] split = gameObject.name.Split('-');
 
-        //int num = int.Parse(split[1]);
+        //thisEnemyNumber = int.Parse(split[1]);
 
-        //nextPos = GameObject.Find("nextPos" + "-" + num).transform;
+        //_currentState = new DroneState[SingleGameController.globalEnemyNumber];
 
         tempSpeed = transform.GetComponent<AIPath>().maxSpeed;
 
@@ -65,7 +69,7 @@ public class AI : MonoBehaviour
 
     void NextRandomPos()
     {
-        if (allowFindRandomPos || AIDestinationSetter.posDone)
+        if (allowFindRandomPos)
         {
             allowFindRandomPos = false;
 
@@ -96,8 +100,9 @@ public class AI : MonoBehaviour
                         //NextRandomPos();
                         allowFindRandomPos = true;
                     }
-
-                    if (PlayerFind.playerFinded)
+                    
+                    if ((PlayerFind.playerFinded && PlayerFind.enemyName == transform.name) ||
+                        (PlayerBullet.playerShot && PlayerBullet.playerShotName == transform.name))
                     {
                         _currentState = DroneState.Attack;
                     }
@@ -132,14 +137,20 @@ public class AI : MonoBehaviour
                 }
             case DroneState.Escape:
                 {
-                    Debug.Log("ACC");
                     if (Target != null)
                     {
                         allowFire = false;
-                        Debug.Log("ADD");
                         AIDestinationSetter.wantSearch = true;
 
-                        if (AIHealth.isEscape && Vector3.Distance(Target.transform.position, nextPos.position) > 10f)
+                        string[] split = gameObject.name.Split('-');
+
+                        int num = int.Parse(split[1]);
+
+                        nextPos = GameObject.Find("nextPos" + "-" + num).transform;
+
+                        if (AIHealth.isEscape &&
+                            (transform.name == AIHealth.healthEnemyName) &&
+                            (Vector3.Distance(Target.transform.position, nextPos.position) > 10f))
                         {
                             AIHealth.isEscape = false;
                             _currentState = DroneState.Saerch;
@@ -232,7 +243,6 @@ public class AI : MonoBehaviour
 public enum DroneState
 {
     Saerch,
-    Chase,
     Attack,
     Escape
 }
