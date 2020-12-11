@@ -27,7 +27,14 @@ public class AIHealth : MonoBehaviour
 
 	string tempName = null;
 
-	public void TakeDamage(GameObject playerFrom, int amount)
+	private AudioSource explosionSound;
+
+	private void Start()
+    {
+		explosionSound = GameObject.Find("explosionSound").GetComponent<AudioSource>();
+	}
+
+    public void TakeDamage(GameObject playerFrom, int amount)
 	{
 		currentHealth -= amount;
 
@@ -44,6 +51,8 @@ public class AIHealth : MonoBehaviour
 			{
 				//Explosion.gameObject.transform.position = gameObject.transform.position;
 				Explosion.SetBool("isExplore", true);
+
+				explosionSound.Play();
 
 				Destroy(gameObject, Explosion.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
 				//Destroy(gameObject);

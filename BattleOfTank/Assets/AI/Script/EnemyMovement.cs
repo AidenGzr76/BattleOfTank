@@ -24,6 +24,13 @@ public class EnemyMovement : MonoBehaviour
 
     public int bulletSpeed;
 
+    private AudioSource shootSound;
+
+    private void Start()
+    {
+        shootSound = GameObject.Find("shootSound").GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -35,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            shootSound.Play();
             CmdFire();
         }
     }

@@ -22,11 +22,15 @@ public class Health : MonoBehaviour
 
 	public static int score = 0;
 
+	private AudioSource explosionSound;
+
 	// Use this for initialization
 	void Start()
 	{		
 		TankMovement pc = GetComponent<TankMovement>();
 		isLocalPlayer = pc.isLocalPlayer;
+
+		explosionSound = GameObject.Find("explosionSound").GetComponent<AudioSource>();
 	}
 
 	public void TakeDamage(GameObject playerFrom, int amount)
@@ -46,6 +50,8 @@ public class Health : MonoBehaviour
 			if (destroyOnDeath)
 			{
 				Explosion.SetBool("isExplore", true);
+
+				explosionSound.Play();
 
 				if (isEnemy)
 				{

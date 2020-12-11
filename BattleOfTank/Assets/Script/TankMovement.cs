@@ -40,6 +40,8 @@ public class TankMovement : MonoBehaviour
 
     public GameObject Fire;
 
+    private AudioSource shootSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,8 @@ public class TankMovement : MonoBehaviour
             playercamera.SetActive(true);
         else
             playercamera.SetActive(false);
+
+        shootSound = GameObject.Find("shootSound").GetComponent<AudioSource>();
 
         //if (isLocalPlayer == true)
         //{
@@ -104,6 +108,7 @@ public class TankMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            shootSound.Play();
             Network n = Network.instance.GetComponent<Network>();
             //CmdFire();
             n.CommandShoot();
