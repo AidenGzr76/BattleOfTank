@@ -15,6 +15,9 @@ public class Network : MonoBehaviour
 	public GameObject player;
 	public GameObject maincamera;
 
+	private AudioSource menuSound;
+	private AudioSource gameSound;
+
 	void Awake()
 	{
 		if (instance == null)
@@ -37,10 +40,17 @@ public class Network : MonoBehaviour
 		socket.On("player shoot", OnPlayerShoot);
 		socket.On("health", OnHealth);
 		socket.On("other player disconnected", OnOtherPlayerDisconnect);
+
+		menuSound = GameObject.Find("menuSound").GetComponent<AudioSource>();
+		gameSound = GameObject.Find("gameSound").GetComponent<AudioSource>();
+
+		menuSound.Play();
 	}
 
 	public void JoinGame()
 	{
+		menuSound.Stop();
+		gameSound.Play();
 		StartCoroutine(ConnectToServer());
 	}
 

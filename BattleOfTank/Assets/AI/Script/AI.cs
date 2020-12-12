@@ -46,10 +46,14 @@ public class AI : MonoBehaviour
 
     //private int thisEnemyNumber;
 
+    private AudioSource shootSound;
+
     private void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+
+        shootSound = GameObject.Find("shootSound").GetComponent<AudioSource>();
 
         Target = GameObject.Find("AIPlayerTank").GetComponent<Player>();
 
@@ -186,6 +190,8 @@ public class AI : MonoBehaviour
     {
         if (allowFire)
         {
+            shootSound.Play();
+
             GameObject bullet = Instantiate(Bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
 
             Fire.gameObject.SetActive(true);

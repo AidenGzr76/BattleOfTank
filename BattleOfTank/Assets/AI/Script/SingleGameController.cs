@@ -29,8 +29,16 @@ public class SingleGameController : MonoBehaviour
 
     public Text Kills;
 
+    private AudioSource menuSound;
+    private AudioSource gameSound;
+
     private void Start()
     {
+        menuSound = GameObject.Find("menuSound").GetComponent<AudioSource>();
+        gameSound = GameObject.Find("gameSound").GetComponent<AudioSource>();
+
+        menuSound.Play();
+
         singleEndMenu.SetActive(false);
         enemyNumberMenu.SetActive(true);
         singleStartMenu.SetActive(false);
@@ -72,6 +80,9 @@ public class SingleGameController : MonoBehaviour
 
     public void singleAIStart()
     {
+        menuSound.Stop();
+        gameSound.Play();
+
         int enemynumber = eNumber;
 
         for (int i = 0; i < eNumber; i++)
