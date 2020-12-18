@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - dead
+  - Enemy
+  - Gun
   layers:
   - Default
   - TransparentFX

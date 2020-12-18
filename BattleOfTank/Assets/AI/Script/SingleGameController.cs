@@ -121,6 +121,9 @@ public class SingleGameController : MonoBehaviour
         //AIHealth.score = 0;
         AIDestinationSetter.wantSearch = false;
 
+        GunPlayerFind.GunFindedplayer = false;
+        PlayerBullet.playerShotToGun = false;
+
         SceneManager.LoadScene("single");
     }
 

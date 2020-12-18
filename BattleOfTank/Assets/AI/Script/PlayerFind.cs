@@ -12,10 +12,11 @@ public class PlayerFind : MonoBehaviour
     {   
         if (collider.gameObject.tag == "Player")
         {
-            playerFinded = true;
             //AI._target = collider.GetComponent<Player>();
             transform.parent.GetComponent<AIPath>().maxSpeed = 0;
             enemyName = transform.parent.name;
+
+            playerFinded = true;
         }
     }
 }

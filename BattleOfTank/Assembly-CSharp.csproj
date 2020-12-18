@@ -69,6 +69,9 @@
     <Compile Include="Assets\AI\Script\EnemyBullet.cs" />
     <Compile Include="Assets\AI\Script\EnemyGFX.cs" />
     <Compile Include="Assets\AI\Script\EnemyMovement.cs" />
+    <Compile Include="Assets\AI\Script\GunAI.cs" />
+    <Compile Include="Assets\AI\Script\GunHealth.cs" />
+    <Compile Include="Assets\AI\Script\GunPlayerFind.cs" />
     <Compile Include="Assets\AI\Script\Player.cs" />
     <Compile Include="Assets\AI\Script\PlayerBullet.cs" />
     <Compile Include="Assets\AI\Script\PlayerFind.cs" />

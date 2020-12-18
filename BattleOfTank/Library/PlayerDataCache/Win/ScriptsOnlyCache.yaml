@@ -79,6 +79,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -167,6 +171,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -599,7 +607,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 6e3ba0506929f82bcd8490bba8bca9ad
+      Hash: 8df535a29e2e49a2e2e6b46bc7e850bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SingleGameController
@@ -671,7 +679,7 @@ ScriptsOnlyBuild:
     className: EnemySpawner
   - hash:
       serializedVersion: 2
-      Hash: 4e1afcc6e27a4a0659a01eabfbe3495f
+      Hash: 1b00bb72f44e89cd60fc19fbd5198ff4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AI
