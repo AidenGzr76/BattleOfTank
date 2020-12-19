@@ -29,6 +29,8 @@ public class AIHealth : MonoBehaviour
 
 	private AudioSource explosionSound;
 
+	bool isDeath = false;
+
 	private void Start()
     {
 		explosionSound = GameObject.Find("explosionSound").GetComponent<AudioSource>();
@@ -38,6 +40,11 @@ public class AIHealth : MonoBehaviour
 	{
 		currentHealth -= amount;
 
+		if (currentHealth <= 0)
+		{
+			isDeath = true;
+		}
+
 		OnChangeHealth();
 	}
 
@@ -45,8 +52,10 @@ public class AIHealth : MonoBehaviour
 	{
 		healthBar.value = currentHealth / maxHealth;
 
-		if (currentHealth <= 0)
+		if (isDeath)
 		{
+			isDeath = false;
+
 			if (destroyOnDeath)
 			{
 				//Explosion.gameObject.transform.position = gameObject.transform.position;

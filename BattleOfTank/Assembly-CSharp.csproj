@@ -80,6 +80,7 @@
     <Compile Include="Assets\Script\DestroyController.cs" />
     <Compile Include="Assets\Script\EnemySpawner.cs" />
     <Compile Include="Assets\Script\Health.cs" />
+    <Compile Include="Assets\Script\Mine.cs" />
     <Compile Include="Assets\Script\MultiGameController.cs" />
     <Compile Include="Assets\Script\Network.cs" />
     <Compile Include="Assets\Script\PlayerSpawner.cs" />

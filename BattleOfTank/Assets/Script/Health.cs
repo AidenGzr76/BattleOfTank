@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
 
 	private AudioSource explosionSound;
 
+	bool enemyDeath = false;
+
 	// Use this for initialization
 	void Start()
 	{		
@@ -37,6 +39,11 @@ public class Health : MonoBehaviour
 	{
 		currentHealth -= amount;
 
+        if (currentHealth <= 0)
+        {
+			enemyDeath = true;
+        }
+
 		Network n = Network.instance.GetComponent<Network>();
 		n.CommandHealthChange(playerFrom, this.gameObject, amount, isEnemy);
 	}
@@ -45,8 +52,10 @@ public class Health : MonoBehaviour
 	{
 		healthBar.value = currentHealth / maxHealth;
 
-		if (currentHealth <= 0)
+		if (enemyDeath)
 		{
+			enemyDeath = false;
+
 			if (destroyOnDeath)
 			{
 				Explosion.SetBool("isExplore", true);

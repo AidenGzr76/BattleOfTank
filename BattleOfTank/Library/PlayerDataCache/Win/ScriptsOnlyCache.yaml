@@ -9,7 +9,11 @@ ScriptsOnlyBuild:
     - EnemyGFX
     - EnemyMovement
     - EnemySpawner
+    - GunAI
+    - GunHealth
+    - GunPlayerFind
     - Health
+    - Mine
     - MultiGameController
     - Network
     - Player
@@ -108,27 +112,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11574}
     - Class: 114
-      Script: {instanceID: 12296}
+      Script: {instanceID: 12300}
     - Class: 114
-      Script: {instanceID: 12528}
+      Script: {instanceID: 12534}
     - Class: 114
-      Script: {instanceID: 12906}
+      Script: {instanceID: 12912}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 13066}
+      Script: {instanceID: 13072}
     - Class: 114
-      Script: {instanceID: 13422}
+      Script: {instanceID: 13428}
     - Class: 114
-      Script: {instanceID: 13852}
+      Script: {instanceID: 13858}
     - Class: 114
-      Script: {instanceID: 13994}
+      Script: {instanceID: 14000}
     - Class: 114
-      Script: {instanceID: 14394}
+      Script: {instanceID: 14400}
     - Class: 114
-      Script: {instanceID: 14700}
+      Script: {instanceID: 14706}
     - Class: 114
-      Script: {instanceID: 14760}
+      Script: {instanceID: 14766}
+    - Class: 114
+      Script: {instanceID: 186978}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -197,35 +203,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11616}
     - Class: 114
-      Script: {instanceID: 12214}
+      Script: {instanceID: 11812}
     - Class: 114
-      Script: {instanceID: 12296}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 12580}
+      Script: {instanceID: 12218}
     - Class: 114
-      Script: {instanceID: 12618}
+      Script: {instanceID: 12300}
     - Class: 114
-      Script: {instanceID: 12738}
+      Script: {instanceID: 12336}
     - Class: 114
-      Script: {instanceID: 13024}
+      Script: {instanceID: 12586}
     - Class: 114
-      Script: {instanceID: 13068}
+      Script: {instanceID: 12624}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 12744}
     - Class: 114
-      Script: {instanceID: 13422}
+      Script: {instanceID: 13030}
     - Class: 114
-      Script: {instanceID: 13534}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13812}
+      Script: {instanceID: 13294}
     - Class: 114
-      Script: {instanceID: 13874}
+      Script: {instanceID: 13428}
     - Class: 114
-      Script: {instanceID: 13994}
+      Script: {instanceID: 13540}
     - Class: 114
-      Script: {instanceID: 14066}
+      Script: {instanceID: 13818}
     - Class: 114
-      Script: {instanceID: 14700}
+      Script: {instanceID: 13880}
+    - Class: 114
+      Script: {instanceID: 14000}
+    - Class: 114
+      Script: {instanceID: 14072}
+    - Class: 114
+      Script: {instanceID: 14706}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -433,6 +445,12 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 421f1bdfabf7f9beca4a39843c0c0768
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GunAI
+  - hash:
+      serializedVersion: 2
       Hash: a5a60d0b9e6d53d72e12aef88e23ee68
     assemblyName: AstarPathfindingProject.dll
     namespaceName: Pathfinding
@@ -443,6 +461,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GunPlayerFind
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -545,6 +569,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
     className: SpriteShape
+  - hash:
+      serializedVersion: 2
+      Hash: 2da4d64068b20094c301fb6936a7395d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GunHealth
   - hash:
       serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
@@ -1037,6 +1067,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: b4e199ab5f1e76774491eef71d733f45
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Mine
   platform: 5
   scenePathNames:
   - Assets/Scenes/multi.unity
