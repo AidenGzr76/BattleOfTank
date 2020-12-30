@@ -43,8 +43,6 @@ public class GunAI : MonoBehaviour
         if ((GunPlayerFind.GunFindedplayer && GunPlayerFind.GunName == transform.name) ||
             (PlayerBullet.playerShotToGun && PlayerBullet.playerShotNameToGun == transform.name))
         {
-            Debug.Log(GunPlayerFind.GunName);
-            Debug.Log(transform.name);
 
             Vector3 difference = Target.transform.position - Gun.transform.position;
             float rotationZ = (Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg) + 90.0f;
