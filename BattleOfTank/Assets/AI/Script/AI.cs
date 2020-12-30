@@ -104,7 +104,7 @@ public class AI : MonoBehaviour
                         //NextRandomPos();
                         allowFindRandomPos = true;
                     }
-                    
+
                     if ((PlayerFind.playerFinded && PlayerFind.enemyName == transform.name) ||
                         (PlayerBullet.playerShot && PlayerBullet.playerShotName == transform.name))
                     {
@@ -117,6 +117,12 @@ public class AI : MonoBehaviour
                 {
                     if (Target != null)
                     {
+                        if (SingleGameController.levelUp)
+                        {
+                            SingleGameController.levelUp = false;
+                            _currentState = DroneState.Saerch;
+                        }
+
                         Vector3 difference = Target.transform.position - enemyGFX.parent.transform.position;
                         float rotationZ = (Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg) - 90.0f;
                         Quaternion goalRot = Quaternion.Euler(Quaternion.identity.x,
@@ -143,6 +149,12 @@ public class AI : MonoBehaviour
                 {
                     if (Target != null)
                     {
+                        if (SingleGameController.levelUp)
+                        {
+                            SingleGameController.levelUp = false;
+                            _currentState = DroneState.Saerch;
+                        }
+
                         allowFire = false;
                         AIDestinationSetter.wantSearch = true;
 
@@ -181,6 +193,7 @@ public class AI : MonoBehaviour
         if (AIHealth.isEscape)
         {
             PlayerFind.playerFinded = false;
+            PlayerBullet.playerShot = false;
             _currentState = DroneState.Escape;
             //_currentState = DroneState.Saerch;
         }
