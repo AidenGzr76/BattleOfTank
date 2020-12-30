@@ -78,14 +78,6 @@ public class AIHealth : MonoBehaviour
                 {
 					score++;
 					tempName = transform.name;
-
-					string[] split = gameObject.name.Split('-');
-
-					int num = int.Parse(split[1]);
-
-					GameObject nextPos = GameObject.Find("nextPos" + "-" + num);
-
-					Destroy(nextPos);
 				}
             }
             else
