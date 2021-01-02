@@ -75,21 +75,28 @@ public class AI : MonoBehaviour
     {
         if (allowFindRandomPos)
         {
-            allowFindRandomPos = false;
+            try
+            {
+                allowFindRandomPos = false;
 
-            string[] split = gameObject.name.Split('-');
+                string[] split = gameObject.name.Split('-');
 
-            int num = int.Parse(split[1]);
+                int num = int.Parse(split[1]);
 
-            nextPos = GameObject.Find("nextPos" + "-" + num).transform;
+                nextPos = GameObject.Find("nextPos" + "-" + num).transform;
 
-            nextPos.position = new Vector3(Random.Range(-24, 24), Random.Range(-18, 10), 0);
+                nextPos.position = new Vector3(Random.Range(-24, 24), Random.Range(-18, 10), 0);
+            }
+            catch (System.Exception)
+            {
+                // Nope
+                //throw;
+            }
         }
     }
 
     void FixedUpdate()
     {
-
         switch (_currentState)
         {
             case DroneState.Saerch:
@@ -100,7 +107,7 @@ public class AI : MonoBehaviour
 
                     if (isHitBlock)
                     {
-                        Debug.Log("Path Blocked");
+                        //Debug.Log("Path Blocked");
                         //NextRandomPos();
                         allowFindRandomPos = true;
                     }
@@ -129,7 +136,6 @@ public class AI : MonoBehaviour
                             enemyGFX.Find("BarrelPivot").transform.rotation,
                             goalRot, Time.deltaTime * 4f);
 
-
                         allowFire = true;
 
                         AIDestinationSetter.wantSearch = false;
@@ -143,26 +149,34 @@ public class AI : MonoBehaviour
                 {
                     if (Target != null)
                     {
-                        allowFire = false;
-                        AIDestinationSetter.wantSearch = true;
-
-                        string[] split = gameObject.name.Split('-');
-
-                        int num = int.Parse(split[1]);
-
-                        nextPos = GameObject.Find("nextPos" + "-" + num).transform;
-
-                        if (AIHealth.isEscape &&
-                            (transform.name == AIHealth.healthEnemyName) &&
-                            (Vector3.Distance(Target.transform.position, nextPos.position) > 10f))
+                        try
                         {
-                            AIHealth.isEscape = false;
-                            _currentState = DroneState.Saerch;
+                            allowFire = false;
+                            AIDestinationSetter.wantSearch = true;
+
+                            string[] split = gameObject.name.Split('-');
+
+                            int num = int.Parse(split[1]);
+
+                            nextPos = GameObject.Find("nextPos" + "-" + num).transform;
+
+                            if (AIHealth.isEscape &&
+                                (transform.name == AIHealth.healthEnemyName) &&
+                                (Vector3.Distance(Target.transform.position, nextPos.position) > 10f))
+                            {
+                                AIHealth.isEscape = false;
+                                _currentState = DroneState.Saerch;
+                            }
+                            else
+                            {
+                                allowFindRandomPos = true;
+                                //NextRandomPos();
+                            }
                         }
-                        else
+                        catch (System.Exception)
                         {
-                            allowFindRandomPos = true;
-                            //NextRandomPos();
+                            // Nope !
+                            //throw;
                         }
                     }
                     break;
@@ -178,7 +192,7 @@ public class AI : MonoBehaviour
 
     public void checkEscape()
     {
-        if (AIHealth.isEscape)
+        if (AIHealth.isEscape && AIHealth.escapeEnemyName == this.transform.name)
         {
             PlayerFind.playerFinded = false;
             _currentState = DroneState.Escape;
@@ -223,7 +237,8 @@ public class AI : MonoBehaviour
         //    isHitBlock = true;
         //}
 
-        if (collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Block")
+        if (collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Block" ||
+            collision.transform.tag == "Enemy")
         {
             isHitBlock = true;
         }
@@ -238,7 +253,8 @@ public class AI : MonoBehaviour
         //    isHitBlock = false;
         //}
 
-        if (collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Block")
+        if (collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Block" ||
+            collision.transform.tag == "Enemy")
         {
             isHitBlock = false;
         }

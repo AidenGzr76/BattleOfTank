@@ -11,7 +11,7 @@ public class GunPlayerFind : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            Debug.Log("Player In");
+            //Debug.Log("Player In");
             GunFindedplayer = true;
             GunName = transform.parent.name;
         }
@@ -21,7 +21,7 @@ public class GunPlayerFind : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            Debug.Log("Player Out");
+            //Debug.Log("Player Out");
             GunFindedplayer = false;
             GunAI.allowFire = false;
         }

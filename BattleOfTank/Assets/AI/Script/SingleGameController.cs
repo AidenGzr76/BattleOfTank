@@ -23,7 +23,8 @@ public class SingleGameController : MonoBehaviour
     public Text enemyNumText;
     public Text playerScore;
 
-    public static int globalEnemyNumber = 5;
+    private int currentEnemyNumber;
+    private int allEnemyNumber;
 
     public GameObject MainCamera;
 
@@ -31,6 +32,9 @@ public class SingleGameController : MonoBehaviour
 
     private AudioSource menuSound;
     private AudioSource gameSound;
+
+    private int wave = 1;
+    public Text waveText;
 
     private void Start()
     {
@@ -43,13 +47,18 @@ public class SingleGameController : MonoBehaviour
         enemyNumberMenu.SetActive(true);
         singleStartMenu.SetActive(false);
         Time.timeScale = 0;
+
+        waveText.text = wave.ToString();
     }
+
+    int showEnemyNum = 1;
 
     public void FixedUpdate()
     {
-        Kills.text = AIHealth.score + "/" + globalEnemyNumber;
+        Kills.text = AIHealth.score + "/" + showEnemyNum;
+        //waveText.text = wave.ToString();
 
-        if (AIHealth.destroyPlayer || (AIHealth.score == globalEnemyNumber))
+        if (AIHealth.destroyPlayer)
         {
             MainCamera.SetActive(true);
 
@@ -59,6 +68,24 @@ public class SingleGameController : MonoBehaviour
             Time.timeScale = 0;
 
             AIHealth.destroyPlayer = false;
+        }
+        if (AIHealth.score == showEnemyNum)
+        {
+            PlayerFind.playerFinded = false;
+            PlayerBullet.playerShot = false;
+            AIHealth.isEscape = false;
+            AIDestinationSetter.wantSearch = false;
+
+            GunPlayerFind.GunFindedplayer = false;
+            PlayerBullet.playerShotToGun = false;
+            currentEnemyNumber += 1;
+            showEnemyNum += currentEnemyNumber;
+
+            EnemyInstantiate(currentEnemyNumber);
+
+            wave++;
+
+            waveText.text = wave.ToString();
         }
     }
 
@@ -73,6 +100,8 @@ public class SingleGameController : MonoBehaviour
             eNumber = 5;
         }
 
+        showEnemyNum = eNumber;
+        currentEnemyNumber = eNumber;
         enemyNumText.text = eNumber.ToString();
         enemyNumberMenu.SetActive(false);
         singleStartMenu.SetActive(true);
@@ -83,9 +112,18 @@ public class SingleGameController : MonoBehaviour
         menuSound.Stop();
         gameSound.Play();
 
-        int enemynumber = eNumber;
+        EnemyInstantiate(eNumber);
 
-        for (int i = 0; i < eNumber; i++)
+        singleStartMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    int enemynumber = 0;
+
+    void EnemyInstantiate(int numberOfEnemy)
+    {
+
+        for (int i = 0; i < numberOfEnemy; i++)
         {
             GameObject enemy = Instantiate(
                 Enemy,
@@ -93,7 +131,7 @@ public class SingleGameController : MonoBehaviour
                 Quaternion.Euler(0, 0, Random.Range(0, 180))
                 );
 
-            enemynumber = i + 1;
+            enemynumber += 1;
 
             enemy.name = "Enemy" + "-" + enemynumber.ToString();
 
@@ -108,9 +146,7 @@ public class SingleGameController : MonoBehaviour
             enemy.GetComponent<AIDestinationSetter>().target = npos.transform;
         }
 
-        globalEnemyNumber = eNumber;
-        singleStartMenu.SetActive(false);
-        Time.timeScale = 1;
+        //currentEnemyNumber = numberOfEnemy;
     }
 
     public void Retry()

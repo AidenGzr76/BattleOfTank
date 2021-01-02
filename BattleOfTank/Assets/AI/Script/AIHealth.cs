@@ -25,6 +25,8 @@ public class AIHealth : MonoBehaviour
 
 	public static string healthEnemyName;
 
+	public static string escapeEnemyName;
+
 	string tempName = null;
 
 	private AudioSource explosionSound;
@@ -34,6 +36,7 @@ public class AIHealth : MonoBehaviour
 	private void Start()
     {
 		explosionSound = GameObject.Find("explosionSound").GetComponent<AudioSource>();
+		InvokeRepeating("healthUp", 0f, 6f);
 	}
 
     public void TakeDamage(GameObject playerFrom, int amount)
@@ -78,6 +81,15 @@ public class AIHealth : MonoBehaviour
                 {
 					score++;
 					tempName = transform.name;
+
+					string[] split = gameObject.name.Split('-');
+
+					int num = int.Parse(split[1]);
+
+					GameObject nextPos = GameObject.Find("nextPos" + "-" + num);
+
+					//isEscape = false;
+					Destroy(nextPos);
 				}
             }
             else
@@ -90,8 +102,18 @@ public class AIHealth : MonoBehaviour
 			if (currentHealth <= 40)
 			{
 				healthEnemyName = transform.name;
+				escapeEnemyName = this.transform.name;
 				isEscape = true;
 			}
 		}
 	}
+
+	public void healthUp()
+    {
+		if (!isEnemy && currentHealth < 90)
+        {
+			currentHealth += 10;
+			OnChangeHealth();
+        }
+    }
 }
