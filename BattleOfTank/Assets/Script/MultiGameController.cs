@@ -16,6 +16,8 @@ public class MultiGameController : MonoBehaviour
 
     public Text score;
 
+    public Text onlineScore;
+
     private void Start()
     {
         multiEndMenu.SetActive(false);
@@ -25,11 +27,12 @@ public class MultiGameController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        onlineScore.text = Health.score.ToString();
         if (Health.destroyControl)
         {
             multiEndMenu.SetActive(true);
             score.text = Health.score.ToString();
-            Debug.Log("DD");
+            Debug.Log("Destroyed");
             // Stop Game
             Health.destroyControl = false;
         }

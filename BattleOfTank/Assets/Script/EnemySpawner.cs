@@ -15,16 +15,16 @@ public class EnemySpawner : MonoBehaviour
 	void Start()
 	{
 		// set the random spawn points over here
-		for (int i = 0; i < numberOfEnemies; i++)
-		{
-			var spawnPosition = new Vector3(Random.Range(-8f, 8f), Random.Range(-8f, 8f), 0f);
-			var spawnRotation = Quaternion.Euler(0f, 0f, Random.Range(0, 180));
-			SpawnPoint enemySpawnPoint = (Instantiate(spawnPoint,
-													  spawnPosition,
-													  spawnRotation)
-										  as GameObject).GetComponent<SpawnPoint>();
-			enemySpawnPoints.Add(enemySpawnPoint);
-		}
+		//for (int i = 0; i < numberOfEnemies; i++)
+		//{
+		//	var spawnPosition = new Vector3(Random.Range(-8f, 8f), Random.Range(-8f, 8f), 0f);
+		//	var spawnRotation = Quaternion.Euler(0f, 0f, Random.Range(0, 180));
+		//	SpawnPoint enemySpawnPoint = (Instantiate(spawnPoint,
+		//											  spawnPosition,
+		//											  spawnRotation)
+		//								  as GameObject).GetComponent<SpawnPoint>();
+		//	enemySpawnPoints.Add(enemySpawnPoint);
+		//}
 		//SpawnEnemies();
 	}
 
