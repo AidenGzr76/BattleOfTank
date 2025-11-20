@@ -1,5 +1,7 @@
 # 🛡️ Battle of Tanks (2D)
 
+**[🎮 Play it now on itch.io!](https://gazoram.itch.io/battle-of-tanks)**
+
 > **University Final Project (2020-2021)** > *Updated in 2025 for Unity 6 / 2022 LTS & Mobile Support*
 
 ![BoTGame-ezgif com-optimize](https://github.com/user-attachments/assets/71572623-04d0-4181-a77d-13dc82446dcf)
