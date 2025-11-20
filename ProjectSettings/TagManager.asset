@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - dead
+  - Enemy
+  - Gun
+  - JoyStick
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 4189602319
+    locked: 0
+  - name: Road
+    uniqueID: 1453101541
+    locked: 0
+  - name: Block
+    uniqueID: 980035533
+    locked: 0
+  - name: Tree
+    uniqueID: 2350672281
+    locked: 0
+  - name: Gun
+    uniqueID: 3730316051
+    locked: 0
+  - name: Player
+    uniqueID: 3298027851
+    locked: 0
